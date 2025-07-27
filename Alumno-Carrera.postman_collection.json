@@ -1,0 +1,746 @@
+{
+	"info": {
+		"_postman_id": "345d2191-ad57-4651-8557-1d289a10e56f",
+		"name": "Alumno-Carrera",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46945381",
+		"_collection_link": "https://aviation-pilot-17324629-8900412.postman.co/workspace/ENUCOM~b3ab7025-0d93-416d-86eb-244b0c1bc07a/collection/46945381-345d2191-ad57-4651-8557-1d289a10e56f?action=share&source=collection_link&creator=46945381"
+	},
+	"item": [
+		{
+			"name": "Alumno",
+			"item": [
+				{
+					"name": "MOSTRAR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/mostrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"mostrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR POR NOMBRE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/nombre/Carlos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"nombre",
+								"Carlos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR POR NOMBRE NO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/nombre/Pedro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"nombre",
+								"Pedro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GUARDAR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAlumno\": 1001,\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"edad\": 22,\r\n  \"carrera\": {\r\n    \"idCarrera\": 1\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/guardar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GUARDAR SIN CARRERA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAlumno\": 1671,\r\n  \"nombre\": \"Guillermo\",\r\n  \"apellido\": \"Pérez\",\r\n  \"edad\": 22\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/guardar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GUARDAR CON MISMO ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAlumno\": 1001,\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"edad\": 22,\r\n  \"carrera\": {\r\n    \"idCarrera\": 1\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/guardar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GUARDAR CON MISMO NOMBRE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAlumno\": 1001,\r\n  \"nombre\": \"Ana\",\r\n  \"apellido\": \"Pérez\",\r\n  \"edad\": 22,\r\n  \"carrera\": {\r\n    \"idCarrera\": 1\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/guardar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDITAR",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAlumno\": 5,\r\n  \"nombre\": \"Juan Carlos\",\r\n  \"apellido\": \"Pérez\",\r\n  \"edad\": 23,\r\n  \"carrera\": {\r\n    \"idCarrera\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDITAR ID NO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAlumno\": 1001,\r\n  \"nombre\": \"Juan Carlos\",\r\n  \"apellido\": \"Pérez\",\r\n  \"edad\": 23,\r\n  \"carrera\": {\r\n    \"idCarrera\": 1\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/alumno/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"alumno",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAlumno\": 1001\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/alumno/eliminar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"alumno",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR JOIN",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAlumno\": 553\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/eliminar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR CON CARRERA ASIG",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAlumno\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/eliminar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR POR ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR POR ID NO EXISTE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/alumno/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"alumno",
+								"55"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrera",
+			"item": [
+				{
+					"name": "MOSTRAR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/mostrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"mostrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CARRERA POR MODALIDAD",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/modalidad/Presencial",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"modalidad",
+								"Presencial"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GUARDAR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCarrera\": 11,\r\n  \"nombre\": \"Ingeniería en Sistemasxyz\",\r\n  \"duracion\": 8,\r\n  \"modalidad\": \"Escolarizado\",\r\n  \"nivelAcademico\": \"Licenciatura\"\r\n  \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/guardar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GUARDAR ID NO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCarrera\": 11,\r\n  \"nombre\": \"Ingeniería en Sistemasxyz\",\r\n  \"duracion\": 8,\r\n  \"modalidad\": \"Escolarizado\",\r\n  \"nivelAcademico\": \"Licenciatura\"\r\n  \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/guardar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GUARDAR X NOMBRE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCarrera\": 111,\r\n  \"nombre\": \"Ingeniería en Sistemasxyz\",\r\n  \"duracion\": 8,\r\n  \"modalidad\": \"Escolarizado\",\r\n  \"nivelAcademico\": \"Licenciatura\"\r\n  \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/guardar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDITAR",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCarrera\": 111,\r\n  \"nombre\": \"Ingeniería \",\r\n  \"duracion\": 9,\r\n  \"modalidad\": \"Escolarizado\",\r\n  \"nivelAcademico\": \"Licenciatura\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDITAR ID NO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCarrera\": 111,\r\n  \"nombre\": \"Ingeniería \",\r\n  \"duracion\": 9,\r\n  \"modalidad\": \"Escolarizado\",\r\n  \"nivelAcademico\": \"Licenciatura\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDITAR NOMBRE NO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCarrera\": 11,\r\n  \"nombre\": \"Ingeniería \", \r\n  \"duracion\": 5,\r\n  \"modalidad\": \"Escolarizado\",\r\n  \"nivelAcademico\": \"Licenciatura\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/editar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCarrera\": 11\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/eliminar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ID NO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idCarrera\": 1123\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/eliminar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"eliminar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR POR ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/carrera/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"carrera",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BUSCAR ID NO",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
